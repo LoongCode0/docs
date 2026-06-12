@@ -60,11 +60,13 @@ loongcode_docs/  (main 分支，远程 github.com/LoongCode0/docs)
 ## 发布流程
 
 1. `pnpm docs:dev` — 本地实时预览
-2. `pnpm docs:build` — 将 `src/` 构建输出到仓库根 `docs/`（VitePress `outDir` 指向 `../../docs`，并生成 `.nojekyll`）
+2. `pnpm docs:build` — 将 `src/` 构建输出到仓库根 `docs/`（VitePress `outDir` 配置指向仓库根的 `docs/`；`.nojekyll` 放在 `src/public/` 下，构建时自动复制到输出根目录）
 3. `bin/deploy.bat` — 一键发布：构建 → `git add docs` → 提交 → 推送 `main`
 4. GitHub 仓库 Settings → Pages：选择 `main` 分支 `/docs` 目录（一次性手动设置）
 
-## 站点结构（25 页）
+## 站点结构（29 页）
+
+页面构成：首页 1 + 入门指南 5 + 功能详解 12 + 设置与配置 8 + 参考 3 = 29 页。
 
 顶部导航：**入门指南 | 功能详解 | 设置与配置 | 参考**
 
@@ -142,13 +144,13 @@ src/
 
 1. `pnpm docs:build` 零报错（VitePress 自动检查站内死链）
 2. 本地 `pnpm docs:dev` 检查：导航/侧边栏完整、搜索可用、移动端不破版
-3. 25 个页面全部有实质内容，无 TODO/空壳页面
+3. 29 个页面全部有实质内容，无 TODO/空壳页面
 4. 推送后 `https://loongcode0.github.io/docs/` 可访问且样式正常（base 路径正确）
 
 ## 实施顺序
 
 1. 初始化仓库骨架：package.json、VitePress 配置（base/outDir/导航/侧边栏）、.gitignore、README、bin/deploy.bat
-2. 编写首页 + 入门指南（5 页，新用户第一印象，优先级最高）
+2. 编写首页 + 入门指南（共 6 页，新用户第一印象，优先级最高）
 3. 编写功能详解（12 页，逐模块）
 4. 编写设置与配置（8 页）
 5. 编写参考（3 页：快捷键/FAQ/故障排查）

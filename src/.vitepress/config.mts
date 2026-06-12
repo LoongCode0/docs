@@ -1,4 +1,27 @@
 import { defineConfig } from 'vitepress'
+import type { Plugin } from 'vite'
+
+// 占位图片插件：将 `![alt](...)` 约定中的 "..." 路径解析为透明 1×1 PNG 数据 URL，
+// 使构建能通过而无需实际图片文件存在。
+function placeholderImagePlugin(): Plugin {
+  const PLACEHOLDER_ID = '...'
+  const TRANSPARENT_PNG =
+    'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=='
+
+  return {
+    name: 'vitepress-placeholder-image',
+    resolveId(id) {
+      if (id === PLACEHOLDER_ID || id === `./${PLACEHOLDER_ID}`) {
+        return '\0' + PLACEHOLDER_ID
+      }
+    },
+    load(id) {
+      if (id === '\0' + PLACEHOLDER_ID) {
+        return `export default "${TRANSPARENT_PNG}"`
+      }
+    }
+  }
+}
 
 export default defineConfig({
   lang: 'zh-CN',
@@ -7,6 +30,9 @@ export default defineConfig({
   base: '/docs/',
   // srcDir 由 CLI 参数 'src' 传入（见 package.json scripts），outDir 相对于 srcDir 解析
   outDir: '../docs',
+  vite: {
+    plugins: [placeholderImagePlugin()]
+  },
   themeConfig: {
     nav: [
       { text: '入门指南', link: '/guide/what-is-loongcode' },

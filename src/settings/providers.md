@@ -4,6 +4,8 @@
 
 模型供应商功能让你通过第三方 API 或自建代理接入模型服务，作为官方账号之外的另一条接入路径。配置供应商后，可在任务选择器栏中选择对应的模型档位，调用该供应商提供的模型。
 
+---
+
 ## 什么时候需要配置供应商
 
 **如果你已通过 `claude login` 等方式完成官方账号登录，默认即可正常使用，无需配置本页任何内容。** 以下场景才需要配置供应商：
@@ -123,7 +125,7 @@ API Key 是访问模型服务的唯一凭据，泄露后可能导致费用损失
 
 ## Codex 内置中转
 
-若已安装 Codex CLI，部分支持 OpenAI 接口的供应商会出现**经内置中转使用（Codex）** 开关。开启后，Codex CLI 的请求将经由应用内置的协议转换中转（Chat Completion → Response Stream）后转发至该供应商，从而让 Codex CLI 使用非官方接口。
+若已安装 Codex CLI，部分非 OAuth 原生供应商会出现**启用 Codex 中转**开关。开启后，Codex CLI 发出的 Responses API 请求将经由应用内置的中转层翻译为 Chat Completions 格式转发至该供应商，响应再反向翻译回 Responses 格式返回给 Codex，从而让 DeepSeek 等只提供 Chat Completions 接口的服务也能驱动 Codex 任务（v0.7.1 起）。
 
 ---
 

@@ -50,7 +50,7 @@
 输入框位于界面底部，是向 AI 发送消息的入口：
 
 - **选择器条**（输入框上方）：从左到右依次为 CLI 选择（Claude CLI / Codex CLI）、模型选择、思考深度（Claude：low / medium / high / xhigh / max / ultracode；Codex：minimal / low / medium / high / xhigh）、执行授权（Claude：default / plan / acceptEdits / bypassPermissions；Codex：只读 / 自动 / 完全访问）、当前分支。
-- **上下文用量指示器**：选择器条最右侧显示已用 / 总量的上下文 token 比例；可点击**压缩**对话历史以释放空间。
+- **上下文用量指示器**：选择器条最右侧显示已用 / 总量的上下文 token 比例（token 是 AI 处理文本的计量单位）；可点击**压缩**对话历史以释放空间。
 - **触发器**：在输入框中输入 `@` 可从工作区文件列表添加文件上下文，输入 `/` 可使用内置命令，输入 `$` 可调用已安装的技能。
 - **占位提示**：「向 Claude 提问，输入 @ 添加文件，/ 使用命令，$ 使用技能」；等待 AI 回答时变为「请在上方卡片作答;或在此草拟下一条消息…」。
 

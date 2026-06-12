@@ -1,7 +1,5 @@
 # LoongCode 是什么
 
-## LoongCode 是什么
-
 LoongCode 是一款基于 **Tauri 2 + React 19** 构建的**桌面 Agent IDE**（集成开发环境）。它把原本只能在命令行中使用的 AI 编程助手——Claude Code CLI 和 OpenAI Codex CLI——封装进一个现代化的图形界面，让你无需打开终端就能享受完整的 AI 辅助编程体验。
 
 ![截图：LoongCode 主界面全景，展示左侧任务栏、中央对话区与右侧工具面板](...)

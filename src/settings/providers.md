@@ -119,5 +119,5 @@ API Key 是访问模型服务的唯一凭据，泄露后可能导致费用损失
 
 ## 下一步
 
-- [依赖管理](/settings/dependencies) — 安装或更新 Claude CLI / Codex CLI
+- [依赖管理](/settings/dependencies) — 检测与安装 Claude CLI / Codex CLI
 - [MCP 服务器](/settings/mcp) — 配置模型上下文协议服务器以扩展工具能力

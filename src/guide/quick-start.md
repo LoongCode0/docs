@@ -66,8 +66,8 @@
 |--------|------|----------|
 | **CLI** | 选择驱动引擎：Claude CLI（Anthropic 出品）或 Codex CLI（OpenAI 出品） | 保持 **Claude CLI** |
 | **模型** | 选择具体的 AI 模型 | 保持默认 |
-| **思考深度** | 控制 AI 的推理深度，越深越细致但更慢；Claude 选项：low / medium / high / xhigh / max / ultracode | 保持 **high** |
-| **执行授权** | 控制 AI 执行文件操作和命令的方式；选项：default / plan / acceptEdits / bypassPermissions | 保持 **default** |
+| **思考深度** | 控制 AI 的推理深度，越深越细致但更慢；Claude 选项：low / medium / high / xhigh / max / ultracode | 保持默认（出厂默认为 **max**），嫌慢可调低至 **high** |
+| **执行授权** | 控制 AI 执行文件操作和命令的方式；选项：default / plan / acceptEdits / bypassPermissions | 建议改为 **default**（每步操作先征求确认；出厂默认为 **bypassPermissions**，即完全自主执行） |
 | **工作区** | 当前任务关联的项目文件夹 | 无需修改 |
 | **分支** | 当前 Git 分支（仅对 Git 仓库显示） | 无需修改 |
 

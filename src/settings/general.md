@@ -172,5 +172,6 @@
 
 ## 下一步
 
-- [CLI 与任务配置](/settings/cli) — 设置 CLI 路径、任务级模型与授权模式
+- [CLI 与任务配置](/settings/cli) — 设置任务级 CLI、模型、思考深度与授权模式
 - [模型供应商](/settings/providers) — 接入第三方 API 或自定义供应商
+- [依赖管理](/settings/dependencies) — 检测与安装 Claude CLI / Codex CLI 等外部工具

@@ -39,7 +39,7 @@ pnpm docs:build
 1. 进入仓库 **Settings → Pages**
 2. Source 选择 **Deploy from a branch**
 3. Branch 选择 `main`，目录选择 `/docs`
-4. 保存后等待约 1 分钟，即可通过 `https://<用户名>.github.io/docs/` 访问
+4. 保存后等待约 1 分钟，即可通过 `https://loongcode0.github.io/docs/` 访问
 
 ## 目录结构
 

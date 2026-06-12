@@ -3,20 +3,25 @@ import type { Plugin } from 'vite'
 
 // 占位图片插件：将 `![alt](...)` 约定中的 "..." 路径解析为透明 1×1 PNG 数据 URL，
 // 使构建能通过而无需实际图片文件存在。
+// 待全站截图补齐后，将 ![alt](...) 替换为真实路径，本插件即可删除。
 function placeholderImagePlugin(): Plugin {
   const PLACEHOLDER_ID = '...'
+  // 虚拟模块 ID 不能直接用 '\0...'：Rollup 分包时 basename('\0...') 规范化成 ".."，
+  // 会触发 chunkFileNames 的 Invalid substitution 报错（子目录页面必现）。
+  const VIRTUAL_ID = '\0vitepress-placeholder-image'
   const TRANSPARENT_PNG =
     'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=='
 
   return {
     name: 'vitepress-placeholder-image',
+    enforce: 'pre',
     resolveId(id) {
       if (id === PLACEHOLDER_ID || id === `./${PLACEHOLDER_ID}`) {
-        return '\0' + PLACEHOLDER_ID
+        return VIRTUAL_ID
       }
     },
     load(id) {
-      if (id === '\0' + PLACEHOLDER_ID) {
+      if (id === VIRTUAL_ID) {
         return `export default "${TRANSPARENT_PNG}"`
       }
     }

@@ -777,7 +777,7 @@ git push
 
 ### 其他关键事实
 
-- 数据目录：`~/.config/loongcode/loongcode.db`（SQLite）
+- 数据目录（任务 3 执行期间经源码核实修正）：Windows `%APPDATA%\com.loongcode.desktop\`、macOS `~/Library/Application Support/com.loongcode.desktop/`，内含 `loongcode.db`（SQLite）；可在「设置 → 常规 → 数据目录」查看与自定义（依据 src-tauri/src/bootstrap.rs:79-93、tauri.conf.json identifier）
 - 自动更新：仅 Windows；检查源为 GitHub Releases
 - 平台：Windows x64/ARM64、macOS universal；Linux 未发布
 - 首次启动：自动开启新手导览；示例工作区由导览第 2 步按钮创建；不预创建任务

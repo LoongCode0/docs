@@ -123,6 +123,6 @@ export default defineConfig({
     returnToTopLabel: '回到顶部',
     sidebarMenuLabel: '菜单',
     darkModeSwitchLabel: '外观',
-    socialLinks: [{ icon: 'github', link: 'https://github.com/LoongCode0/docs' }]
+    socialLinks: [{ icon: 'github', link: 'https://github.com/LoongCode0/loongcode-release' }]
   }
 })

@@ -45,7 +45,7 @@ function placeholderImagePlugin(): Plugin {
 export default defineConfig({
   lang: 'zh-CN',
   title: 'LoongCode 使用文档',
-  description: 'LoongCode 桌面 Agent IDE 详细使用说明（基于 v0.7.0）',
+  description: 'LoongCode 桌面 Agent IDE 详细使用说明（基于 v0.7.2）',
   base: '/docs/',
   // srcDir 由 CLI 参数 'src' 传入（见 package.json scripts），outDir 相对于 srcDir 解析
   outDir: '../docs',
@@ -83,6 +83,8 @@ export default defineConfig({
             { text: '集成终端', link: '/features/terminal' },
             { text: 'Git 集成', link: '/features/git' },
             { text: '斜杠命令与文件面板', link: '/features/slash-commands' },
+            { text: '动态工作流', link: '/features/workflows' },
+            { text: '定时执行消息', link: '/features/scheduled-send' },
             { text: '代码检查点', link: '/features/checkpoints' },
             { text: '子智能体', link: '/features/subagents' },
             { text: '权限与审批', link: '/features/permissions' },

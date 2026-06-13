@@ -1,7 +1,7 @@
 /*
  * 任务状态指示灯（lc-dot）
  * 复刻 LoongCode 应用内 StatusDot 组件的真实外观，用于在文档表格中直接渲染指示灯。
- * 颜色对应源码：空闲/成功=success(绿)、运行中=warn(琥珀)、出错=danger(红)、提问中=info(蓝)。
+ * 颜色对应源码：空闲/成功=success(绿)、运行中=warn(琥珀)、出错=danger(红)、提问中=info(蓝)、定时=schedule(紫)。
  * 运行中与提问中带 6px 柔和光晕（box-shadow），其余无光晕；已读（read）时整体暗淡至 40%。
  * 用法：<span class="lc-dot lc-dot--running"></span>，已读叠加 lc-dot--read。
  */
@@ -30,6 +30,13 @@
   background: hsl(210 90% 54%);
   box-shadow: 0 0 6px 1px hsl(210 90% 58%);
 }
+/* 定时：紫色。armed=暗待命（叠加 lc-dot--read），fired-unread=高亮带光晕 */
+.lc-dot--schedule {
+  background: hsl(270 70% 50%);
+}
+.lc-dot--schedule.lc-dot--schedule-hi {
+  box-shadow: 0 0 6px 1px hsl(270 85% 58%);
+}
 
 /* 已读：暗淡至 40%，光晕消失（与应用内一致） */
 .lc-dot--read {
@@ -52,6 +59,12 @@ html.dark .lc-dot--error {
 html.dark .lc-dot--asking {
   background: hsl(210 90% 60%);
   box-shadow: 0 0 6px 1px hsl(210 90% 60%);
+}
+html.dark .lc-dot--schedule {
+  background: hsl(270 85% 65%);
+}
+html.dark .lc-dot--schedule.lc-dot--schedule-hi {
+  box-shadow: 0 0 6px 1px hsl(270 85% 65%);
 }
 html.dark .lc-dot--read {
   opacity: 0.4;

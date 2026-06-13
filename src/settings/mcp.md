@@ -6,7 +6,7 @@ MCP（Model Context Protocol，模型上下文协议）是让 AI 连接外部工
 
 本页管理 Claude CLI 与 Codex CLI 各自的 MCP 服务器配置。页面顶部的 **Claude | Codex** 切换栏用于分别维护两个 CLI 的服务器列表。
 
-![MCP 服务器设置页面，顶部 Claude/Codex 切换栏，下方服务器列表每行显示状态灯、名称、作用域标签和传输协议摘要](...)
+![MCP 服务器设置页面，顶部 Claude/Codex 切换栏，下方服务器列表每行显示状态灯、名称、作用域标签和传输协议摘要](/images/mcp_1.png)
 
 ---
 

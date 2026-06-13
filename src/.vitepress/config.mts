@@ -1,9 +1,15 @@
 import { defineConfig } from 'vitepress'
 import type { Plugin } from 'vite'
+import { existsSync } from 'node:fs'
+import { join } from 'node:path'
 
-// 占位图片插件：将 `![alt](...)` 约定中的 "..." 路径解析为透明 1×1 PNG 数据 URL，
-// 使构建能通过而无需实际图片文件存在。
-// 待全站截图补齐后，将 ![alt](...) 替换为真实路径，本插件即可删除。
+// 占位图片插件：让文档在「截图尚未放置」时仍能正常构建。
+// 处理两类引用：
+//   1. 旧约定 `![alt](...)`（括号内字面三个点）；
+//   2. 已按规范填好的 `/images/xxx.png` 路径，但对应图片文件还没放进 src/public/images/。
+// 两种情况都解析为透明 1×1 PNG 数据 URL，使构建通过而无需图片实际存在；
+// 一旦把真实截图放进 src/public/images/（同名），插件即放行，VitePress 正常加载真实图片。
+// 待全站截图全部补齐后，本插件可整体删除。
 function placeholderImagePlugin(): Plugin {
   const PLACEHOLDER_ID = '...'
   // 虚拟模块 ID 不能直接用 '\0...'：Rollup 分包时 basename('\0...') 规范化成 ".."，
@@ -11,12 +17,20 @@ function placeholderImagePlugin(): Plugin {
   const VIRTUAL_ID = '\0vitepress-placeholder-image'
   const TRANSPARENT_PNG =
     'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=='
+  let publicDir = ''
 
   return {
     name: 'vitepress-placeholder-image',
     enforce: 'pre',
+    configResolved(config) {
+      publicDir = config.publicDir
+    },
     resolveId(id) {
       if (id === PLACEHOLDER_ID || id === `./${PLACEHOLDER_ID}`) {
+        return VIRTUAL_ID
+      }
+      // 已填 /images/ 路径但图片尚未放置 → 透明图兜底；放图后此分支不命中，交回 VitePress 正常处理。
+      if (id.startsWith('/images/') && publicDir && !existsSync(join(publicDir, id))) {
         return VIRTUAL_ID
       }
     },

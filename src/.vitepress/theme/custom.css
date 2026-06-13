@@ -1,0 +1,59 @@
+/*
+ * 任务状态指示灯（lc-dot）
+ * 复刻 LoongCode 应用内 StatusDot 组件的真实外观，用于在文档表格中直接渲染指示灯。
+ * 颜色对应源码：空闲/成功=success(绿)、运行中=warn(琥珀)、出错=danger(红)、提问中=info(蓝)。
+ * 运行中与提问中带 6px 柔和光晕（box-shadow），其余无光晕；已读（read）时整体暗淡至 40%。
+ * 用法：<span class="lc-dot lc-dot--running"></span>，已读叠加 lc-dot--read。
+ */
+.lc-dot {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  margin: 0 3px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+/* 浅色背景（默认）下取略深的饱和色，保证在白底上清晰可辨 */
+.lc-dot--idle,
+.lc-dot--success {
+  background: hsl(142 64% 40%);
+}
+.lc-dot--running {
+  background: hsl(38 92% 48%);
+  box-shadow: 0 0 6px 1px hsl(38 92% 52%);
+}
+.lc-dot--error {
+  background: hsl(0 72% 52%);
+}
+.lc-dot--asking {
+  background: hsl(210 90% 54%);
+  box-shadow: 0 0 6px 1px hsl(210 90% 58%);
+}
+
+/* 已读：暗淡至 40%，光晕消失（与应用内一致） */
+.lc-dot--read {
+  opacity: 0.4;
+  box-shadow: none;
+}
+
+/* 深色背景下用应用深色主题的原始亮度值 */
+html.dark .lc-dot--idle,
+html.dark .lc-dot--success {
+  background: hsl(142 70% 50%);
+}
+html.dark .lc-dot--running {
+  background: hsl(38 92% 60%);
+  box-shadow: 0 0 6px 1px hsl(38 92% 60%);
+}
+html.dark .lc-dot--error {
+  background: hsl(0 75% 60%);
+}
+html.dark .lc-dot--asking {
+  background: hsl(210 90% 60%);
+  box-shadow: 0 0 6px 1px hsl(210 90% 60%);
+}
+html.dark .lc-dot--read {
+  opacity: 0.4;
+  box-shadow: none;
+}

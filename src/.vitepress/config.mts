@@ -104,6 +104,7 @@ export default defineConfig({
             { text: '插件', link: '/settings/plugins' },
             { text: '技能', link: '/settings/skills' },
             { text: '机器人渠道', link: '/settings/bots' },
+            { text: '移动端配对', link: '/settings/mobile-pairing' },
             { text: '依赖管理', link: '/settings/dependencies' }
           ]
         }

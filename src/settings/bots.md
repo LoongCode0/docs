@@ -110,5 +110,6 @@
 
 ## 下一步
 
+- [移动端配对](/settings/mobile-pairing) — 通过官方 LoongCode App 远程驱动任务（支持实时事件流、历史回放与富输入）
 - [任务工作区](/features/tasks-and-workspaces) — 了解通过机器人远程驱动的任务在应用内如何组织与管理
 - [快捷键参考](/reference/shortcuts) — 查看应用内所有键盘快捷键

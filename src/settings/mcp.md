@@ -4,7 +4,7 @@
 
 MCP（Model Context Protocol，模型上下文协议）是让 AI 连接外部工具和数据源的开放协议。通过添加 MCP 服务器，Claude 或 Codex 可以在对话中直接调用数据库查询、文件系统、Web 搜索等能力。例如，接入文件系统类或数据库类的 MCP 服务器后，AI 就能直接读取相应数据来回答问题，而无需你手动把内容复制粘贴进对话。
 
-本页管理 Claude CLI 与 Codex CLI 各自的 MCP 服务器配置。页面顶部的 **Claude | Codex** 切换栏用于分别维护两个 CLI 的服务器列表。
+本页管理 Claude CLI 与 Codex CLI 各自的 MCP 服务器配置。页面顶部的 **Claude | Codex** 切换栏用于分别维护各 CLI 的服务器列表。
 
 ![MCP 服务器设置页面，顶部 Claude/Codex 切换栏，下方服务器列表每行显示状态灯、名称、作用域标签和传输协议摘要](/images/mcp_1.png)
 

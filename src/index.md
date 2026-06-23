@@ -27,8 +27,8 @@ features:
     title: 深度 Git 集成
     details: 分支/Worktree 切换、变更审查面板、AI 一键生成提交消息。
   - icon: 🤖
-    title: 双 CLI 引擎
-    details: 同时支持 Claude Code 与 OpenAI Codex，每个任务可独立选择 CLI、模型与权限模式。
+    title: 多 CLI 引擎
+    details: 已支持 Claude Code、OpenAI Codex 等多套 CLI，每个任务可独立选择 CLI、模型与权限模式，后续持续接入更多。
   - icon: 🧩
     title: 可扩展
     details: MCP 服务器、插件市场、技能、子智能体，按需扩展 AI 的能力边界。

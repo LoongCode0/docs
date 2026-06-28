@@ -84,6 +84,7 @@ export default defineConfig({
             { text: 'Git 集成', link: '/features/git' },
             { text: '斜杠命令与文件面板', link: '/features/slash-commands' },
             { text: '动态工作流', link: '/features/workflows' },
+            { text: '后台任务活动', link: '/features/background-tasks' },
             { text: '定时执行消息', link: '/features/scheduled-send' },
             { text: '代码检查点', link: '/features/checkpoints' },
             { text: '子智能体', link: '/features/subagents' },

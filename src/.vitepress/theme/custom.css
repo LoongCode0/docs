@@ -38,6 +38,16 @@
   box-shadow: 0 0 6px 1px hsl(270 85% 58%);
 }
 
+/* 后台任务完成未读：高亮带光晕。bg-success=亮绿、bg-failed=亮红（对应 StatusDot 的 BG_SUCCESS/BG_FAILED） */
+.lc-dot--bg-success {
+  background: hsl(142 64% 40%);
+  box-shadow: 0 0 6px 1px hsl(142 64% 46%);
+}
+.lc-dot--bg-failed {
+  background: hsl(0 72% 52%);
+  box-shadow: 0 0 6px 1px hsl(0 72% 56%);
+}
+
 /* 已读：暗淡至 40%，光晕消失（与应用内一致） */
 .lc-dot--read {
   opacity: 0.4;
@@ -65,6 +75,14 @@ html.dark .lc-dot--schedule {
 }
 html.dark .lc-dot--schedule.lc-dot--schedule-hi {
   box-shadow: 0 0 6px 1px hsl(270 85% 65%);
+}
+html.dark .lc-dot--bg-success {
+  background: hsl(142 70% 50%);
+  box-shadow: 0 0 6px 1px hsl(142 70% 50%);
+}
+html.dark .lc-dot--bg-failed {
+  background: hsl(0 75% 60%);
+  box-shadow: 0 0 6px 1px hsl(0 75% 60%);
 }
 html.dark .lc-dot--read {
   opacity: 0.4;

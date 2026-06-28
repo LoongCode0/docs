@@ -100,4 +100,4 @@ LoongCode 支持 **Claude Code 动态工作流（Workflow）**：你把一段工
 
 ## 下一步
 
-了解动态工作流之后，可以继续探索如何让消息到点自动发送，前往[定时执行消息](/features/scheduled-send)继续学习。
+了解动态工作流之后，可以继续了解 AI 把命令与子智能体放到后台执行时的实时呈现，前往[后台任务活动](/features/background-tasks)继续学习。

@@ -1,12 +1,12 @@
 # LoongCode 是什么
 
-LoongCode 是一款**桌面 Agent IDE**（集成开发环境）：它把原本只能在命令行中使用的 AI 编程助手（如 Claude Code CLI、OpenAI Codex CLI 等，后续将持续接入更多）装进一个现代化的图形界面，让你不必学习终端命令，就能用对话的方式让 AI 帮你写代码、改文件、跑命令。
+LoongCode 是一款**桌面 Agent IDE**（集成开发环境）：它把原本只能在命令行中使用的 AI 编程助手（如 Claude Code CLI、OpenAI Codex CLI、OpenCode CLI 等，后续将持续接入更多）装进一个现代化的图形界面，让你不必学习终端命令，就能用对话的方式让 AI 帮你写代码、改文件、跑命令。
 
 ![截图：LoongCode 主界面全景，一个任务正在运行中，展示左侧任务栏、中央对话区与右侧工具面板，突出整体布局与各区域边界](/images/what-is-loongcode_1.png)
 
 ## 它是如何工作的
 
-LoongCode 基于 Tauri 2 + React 19 构建，**本身不直接调用任何模型 API**。它的工作方式是：在你每次发起对话时，LoongCode 在后台以子进程方式拉起本机已安装的 `claude` 或 `codex` 命令行工具，通过流式 JSON 协议与它们通信，再把实时返回的事件流渲染成你看到的对话与工具调用界面。
+LoongCode 基于 Tauri 2 + React 19 构建，**本身不直接调用任何模型 API**。它的工作方式是：在你每次发起对话时，LoongCode 在后台以子进程方式拉起本机已安装的 `claude`、`codex` 或 `opencode` 命令行工具，通过流式 JSON 协议与它们通信，再把实时返回的事件流渲染成你看到的对话与工具调用界面。
 
 这意味着：
 - 你的 API 密钥和模型配置由 CLI 工具自己管理，LoongCode 不经手。
@@ -20,17 +20,17 @@ LoongCode 基于 Tauri 2 + React 19 构建，**本身不直接调用任何模型
 
 **Git 集成**：标题栏内置提交（commit）菜单与 Git 审查面板，支持分支切换、查看代码变更（diff）、查看未推送提交数量，无需切换到其他工具。
 
-**多 CLI 支持（Claude / Codex）**：从 v0.7.0 起，LoongCode 已支持 Claude Code CLI 与 OpenAI Codex CLI，并将持续接入更多。你可以为每个任务单独选择使用哪个 CLI，各 CLI 的模型配置各自独立、互不影响。
+**多 CLI 支持（Claude / Codex / OpenCode）**：从 v0.7.0 起，LoongCode 已支持 Claude Code CLI 与 OpenAI Codex CLI，并自 v0.9.0 起新增 OpenCode CLI（第三个 CLI 家族），后续将持续接入更多。你可以为每个任务单独选择使用哪个 CLI，各 CLI 的模型、思考深度、权限配置各自独立、互不影响。
 
 **可扩展能力（MCP / 插件 / 技能 / 子智能体）**：通过设置页面可以管理 MCP 服务器（为 AI 提供额外工具能力）、插件、技能（自定义斜杠命令）和子智能体，灵活扩展 AI 的能力边界。
 
 **移动端伴侣**：可通过官方 **LoongCode App** 经中转服务远程驱动电脑上的任务，支持实时事件流、历史回放、富输入（斜杠命令 / @文件 / 图片）与任务配置同步，全程端到端加密（见[移动端配对](/settings/mobile-pairing)）；也可通过**微信 / 飞书机器人**接入纯文本交互，方便在手机上查看进度或发送指令。
 
-## 与 Claude Code / Codex 的关系
+## 与 Claude Code / Codex / OpenCode 的关系
 
 可以这样理解：**CLI 是引擎，LoongCode 是驾驶舱**。
 
-- **Claude Code CLI**（由 Anthropic 提供）和 **Codex CLI**（由 OpenAI 提供）负责真正的模型调用、代码执行和文件操作——这是「引擎」。
+- **Claude Code CLI**（由 Anthropic 提供）、**Codex CLI**（由 OpenAI 提供）和 **OpenCode CLI**（开源，v0.9.0 起支持）负责真正的模型调用、代码执行和文件操作——这是「引擎」。
 - **LoongCode** 负责把引擎的能力以图形界面的形式呈现出来，提供多任务管理、历史记录、Git 集成等工作流增强——这是「驾驶舱」。
 
 两者解耦运行：CLI 工具升级新版本后，LoongCode 无需做任何改动；同样，LoongCode 界面的更新也不影响 CLI 的正常工作。

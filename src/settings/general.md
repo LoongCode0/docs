@@ -75,6 +75,8 @@
 - **Claude CLI 命令** — 调用 Claude CLI 使用的命令或路径
 - **Codex CLI 命令** — 调用 Codex CLI 使用的命令或路径
 
+> **OpenCode CLI 无需在此手动配置**（v0.9.0 起）：应用会自动在系统 `PATH` 及 `~/.opencode/bin`、scoop shims 等常见位置发现 `opencode` 命令，因此本节不提供 OpenCode 的路径输入框。
+
 **操作：** 在输入框中直接填写命令名（如 `claude`）或可执行文件的绝对路径（如 `/usr/local/bin/claude`）；也可点击旁边的"选择文件"按钮通过文件浏览器定位。
 
 > 若未安装对应 CLI，请先参阅 [环境准备](/guide/prerequisites) 完成安装。
@@ -178,4 +180,4 @@
 
 - [CLI 与任务配置](/settings/cli) — 设置任务级 CLI、模型、思考深度与授权模式
 - [模型供应商](/settings/providers) — 接入第三方 API 或自定义供应商
-- [依赖管理](/settings/dependencies) — 检测与安装 Claude CLI / Codex CLI 等外部工具
+- [依赖管理](/settings/dependencies) — 检测与安装 Claude CLI / Codex CLI / OpenCode CLI 等外部工具

@@ -50,7 +50,7 @@
 
 输入框位于界面底部，是向 AI 发送消息的入口：
 
-- **选择器条**（输入框上方）：从左到右依次为 CLI 选择（Claude CLI / Codex CLI）、模型选择、思考深度（Claude：low / medium / high / xhigh / max / ultracode；Codex：minimal / low / medium / high / xhigh）、执行授权（Claude：default / plan / acceptEdits / bypassPermissions；Codex：只读 / 自动 / 完全访问）、当前分支。
+- **选择器条**（输入框上方）：从左到右依次为 CLI 选择（Claude CLI / Codex CLI / OpenCode CLI）、模型选择、思考深度（Claude：low / medium / high / xhigh / max / ultracode；Codex：minimal / low / medium / high / xhigh；OpenCode：default / minimal / low / medium / high / xhigh）、执行授权（Claude：default / plan / acceptEdits / auto / dontAsk / bypassPermissions；Codex：只读 / 自动 / 完全访问；OpenCode：auto / ask）、当前分支。
 - **上下文用量指示器**：选择器条最右侧显示已用 / 总量的上下文 token 比例（token 是 AI 处理文本的计量单位）；可点击**压缩**对话历史以释放空间。
 - **触发器**：在输入框中输入 `@` 可从工作区文件列表添加文件上下文，输入 `/` 可打开命令面板使用内置命令、插件命令和技能（技能和命令统一从 `/` 调用）。
 - **占位提示**：「向 Claude 提问，输入 @ 添加文件，/ 使用命令，$ 使用技能」；其中 `$ 使用技能` 只是对技能类命令的说明文字，技能实际同样通过 `/` 命令面板调用（详见[斜杠命令](/features/slash-commands)）。等待 AI 回答时占位提示变为「请在上方卡片作答;或在此草拟下一条消息…」。
@@ -86,7 +86,7 @@
 设置页面提供以下分类（左侧导航）：
 
 - **常规**：主题、数据目录、CLI 路径、网络代理、提示音、代码快照、自动压缩、使用引导等
-- **依赖管理**：检测并安装 Claude CLI / Codex CLI 等依赖
+- **依赖管理**：检测并安装 Claude CLI / Codex CLI / OpenCode CLI 等依赖
 - **模型供应商**：配置各 AI 服务商的 API 密钥（API 密钥是服务商发给你的专属访问凭证）、接口地址、可用模型列表
 - **插件**：发现、安装和管理插件
 - **技能**：创建或编辑可复用的提示词技能

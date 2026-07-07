@@ -4,7 +4,7 @@ layout: home
 hero:
   name: LoongCode
   text: 桌面 Agent IDE
-  tagline: 把 Claude Code 与 Codex 装进图形界面——多任务并行、终端、文件、Git 一站式 AI 编程工作台
+  tagline: 把 Claude Code、Codex 与 OpenCode 装进图形界面——多任务并行、终端、文件、Git 一站式 AI 编程工作台
   actions:
     - theme: brand
       text: 快速上手
@@ -28,7 +28,7 @@ features:
     details: 分支/Worktree 切换、变更审查面板、AI 一键生成提交消息。
   - icon: 🤖
     title: 多 CLI 引擎
-    details: 已支持 Claude Code、OpenAI Codex 等多套 CLI，每个任务可独立选择 CLI、模型与权限模式，后续持续接入更多。
+    details: 已支持 Claude Code、OpenAI Codex、OpenCode 三套 CLI，每个任务可独立选择 CLI、模型、思考深度与权限模式，后续持续接入更多。
   - icon: 🧩
     title: 可扩展
     details: MCP 服务器、插件市场、技能、子智能体，按需扩展 AI 的能力边界。
@@ -38,7 +38,7 @@ features:
 ---
 
 ::: info 版本说明
-本文档基于 **LoongCode v0.8.0** 编写。
+本文档基于 **LoongCode v0.9.0** 编写。
 :::
 
 ![LoongCode 主界面全景：左侧任务栏 + 中央对话区 + 右侧文件/终端面板，正在运行一个编码任务](/images/index_1.png)

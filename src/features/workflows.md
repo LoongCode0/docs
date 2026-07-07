@@ -5,7 +5,7 @@ LoongCode 支持 **Claude Code 动态工作流（Workflow）**：你把一段工
 > 相关基础：[斜杠命令与文件面板](/features/slash-commands)、[子智能体](/features/subagents)
 
 ::: tip 仅 Claude
-动态工作流是 **Claude Code** 的能力，仅在使用 Claude CLI 的任务中可用；Codex 任务不提供此功能。
+动态工作流是 **Claude Code** 的能力，仅在使用 Claude CLI 的任务中可用；Codex 与 OpenCode 任务不提供此功能。
 :::
 
 ---

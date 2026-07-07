@@ -95,7 +95,7 @@
 
 - 当前为初期版本，更多电脑端能力（如终端、文件、Git 的远程操作）仍在后续规划中。
 - 富输入中的 `@文件` 在 worktree 任务下以工作区根目录为基准解析相对路径。
-- 所有模型交互仍由电脑本机的 CLI 子进程（Claude Code / Codex）完成，中转服务与 LoongCode 均不直接访问模型 API。
+- 所有模型交互仍由电脑本机的 CLI 子进程（Claude Code / Codex / OpenCode）完成，中转服务与 LoongCode 均不直接访问模型 API。
 
 ---
 

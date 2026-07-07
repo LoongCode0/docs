@@ -4,10 +4,11 @@
 
 LoongCode 是一个**图形外壳**，它本身不直接调用 AI 模型——真正负责模型交互、代码读写和命令执行的是本机安装的命令行工具（CLI）。
 
-- **Claude Code CLI**（`claude`）：由 Anthropic 提供，是 LoongCode 的**必要依赖**。所有 Claude 系列模型的对话均通过它完成。
-- **Codex CLI**（`codex`）：由 OpenAI 提供，是**可选依赖**。如果你希望使用 OpenAI 的 Codex 模型，则需要额外安装它。
+- **Claude Code CLI**（`claude`）：由 Anthropic 提供。所有 Claude 系列模型的对话均通过它完成。
+- **Codex CLI**（`codex`）：由 OpenAI 提供。如果你希望使用 OpenAI 的 Codex 模型，则需要它。
+- **OpenCode CLI**（`opencode`）：开源 CLI（v0.9.0 起支持）。它复用应用已配置的 OpenAI 兼容供应商（deepseek、GLM 等），适合想用第三方模型的场景。
 
-LoongCode 启动时会自动在系统 PATH（操作系统用于查找可执行程序的目录列表）中搜索这些 CLI 命令，找到后即可使用。
+这三个 AI CLI 属于**「至少安装一个」**关系——任务至少需要其中一个即可运行，你不必装齐三个，按需选用即可。LoongCode 启动时会自动在系统 PATH（操作系统用于查找可执行程序的目录列表）中搜索这些 CLI 命令，找到后即可使用。
 
 ::: tip 如果你是第一次接触这些概念
 「CLI」全称 Command Line Interface，是一种通过文字命令操作的程序，通常在终端（黑色窗口）中运行。LoongCode 帮你省去了直接在终端输入命令的麻烦，但这些程序本身仍需要安装在你的电脑上。
@@ -20,8 +21,9 @@ LoongCode 内置了依赖管理功能，无需手动在命令行中操作。
 1. 打开 LoongCode，点击左下角的设置图标，进入**设置**页面。
 2. 在左侧导航中点击**依赖管理**。
 3. 页面会自动检测当前系统中已安装的依赖，并列出检测结果：
-   - **必须依赖** 分组中包含 Claude CLI、Git 等必要工具。
-   - **可选依赖** 分组中包含 Codex CLI 等可选工具。
+   - **AI CLI · 至少安装一个** 分组中包含 Claude CLI、Codex CLI、OpenCode CLI（三者装其一即可，全部未装时会给出醒目提示）。
+   - **必须依赖** 分组中包含 Git 等其他核心工具。
+   - **可选依赖** 分组中包含其余可选工具。
 4. 对于显示**未安装**的依赖项，点击该卡片右侧的**安装**按钮，LoongCode 将自动完成下载和安装。
 5. 安装完成后，若弹出「依赖已安装」对话框，点击**立即重启**以使新安装的工具生效。
 
@@ -57,6 +59,10 @@ LoongCode 内置了依赖管理功能，无需手动在命令行中操作。
 - 官方安装文档：[https://github.com/openai/codex](https://github.com/openai/codex)
 - 安装完成后，在终端运行 `codex --version` 验证是否成功。
 
+**OpenCode CLI（可选）**：
+- 官方站点：[https://opencode.ai](https://opencode.ai)
+- 安装完成后，在终端运行 `opencode --version` 验证是否成功。
+
 手动安装好 CLI 工具后，重新启动 LoongCode，它会自动在 PATH 中找到这些命令。
 
 ## 手动指定 CLI 路径
@@ -64,7 +70,7 @@ LoongCode 内置了依赖管理功能，无需手动在命令行中操作。
 如果你的 CLI 工具安装在非标准路径，或者你希望使用特定版本的命令，可以手动告诉 LoongCode 去哪里找。
 
 1. 打开**设置**，点击左侧导航中的**常规**。
-2. 找到 **Claude CLI 命令** 或 **Codex CLI 命令** 设置项。
+2. 找到 **Claude CLI 命令** 或 **Codex CLI 命令** 设置项（这两个 CLI 支持手动指定路径；**OpenCode CLI 无需手动填写**，应用会自动在 PATH 及 `~/.opencode/bin`、scoop shims 等常见位置发现它）。
 3. 在输入框中填写命令名（如 `claude`）或完整的可执行文件路径（如 `/usr/local/bin/claude`）。
    - 填写命令名时，LoongCode 会经由系统 PATH 自动解析为绝对路径。
    - 留空则恢复自动发现模式。

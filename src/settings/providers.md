@@ -49,12 +49,13 @@
 
 ## 供应商可用性
 
-每个供应商面板右侧会显示两个可用性指示标记：
+每个供应商面板右侧会显示可用性指示圆点（v0.9.0 起为三项）：
 
 - **Claude CLI 可用** — 当 Anthropic 接口地址非空时显示
 - **Codex CLI 可用** — 当 OpenAI 接口地址非空时显示
+- **OpenCode CLI 可用** — 当 OpenAI 接口地址非空时显示（OpenCode 走 OpenAI 兼容端点，可用条件与 Codex 相同）
 
-仅支持单接口的供应商（如 z.ai、mimo）只对相应 CLI 可用。
+仅支持单接口的供应商（如 z.ai、mimo）只对相应 CLI 可用；只填了 OpenAI 接口地址的供应商，可同时供 Codex 与 OpenCode 使用。
 
 ---
 
@@ -129,7 +130,16 @@ API Key 是访问模型服务的唯一凭据，泄露后可能导致费用损失
 
 ---
 
+## OpenCode 供应商复用
+
+OpenCode 任务的模型下拉**直接复用你在本页配置的 OpenAI 兼容供应商**（v0.9.0 起）：应用会把供应商的接口地址与模型映射经由托管配置注入 OpenCode，**无需在 OpenCode 侧重复填写 API Key**。因此 deepseek、GLM 等第三方模型可直接用于 OpenCode 任务。
+
+- 只要某个供应商填好了 **OpenAI 接口地址**（可用性圆点显示「OpenCode CLI 可用」），它的模型就会出现在 OpenCode 任务的模型下拉中。
+- OpenCode 没有原生 OAuth 档位，模型下拉只列出**供应商模型**；未配置任何 OpenAI 兼容供应商时，下拉中的模型会置灰（原因提示「仅 OpenAI 接口」）。
+
+---
+
 ## 下一步
 
-- [依赖管理](/settings/dependencies) — 检测与安装 Claude CLI / Codex CLI
+- [依赖管理](/settings/dependencies) — 检测与安装 Claude CLI / Codex CLI / OpenCode CLI
 - [MCP 服务器](/settings/mcp) — 配置模型上下文协议服务器以扩展工具能力

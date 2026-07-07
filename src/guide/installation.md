@@ -7,7 +7,7 @@
 | 操作系统 | Windows 10/11（x64 或 ARM64）；macOS（Intel 或 Apple Silicon） |
 | 磁盘空间 | 建议预留 1 GB 以上可用空间（应用本体 + 会话数据增长） |
 | 网络 | 下载安装包需联网访问 GitHub Releases；使用时需联网访问 AI 服务 |
-| 前置依赖 | 需要安装 Claude Code CLI 或 Codex CLI（见[前置依赖](/guide/prerequisites)） |
+| 前置依赖 | 需要安装 Claude Code CLI、Codex CLI 或 OpenCode CLI 中的至少一个（见[前置依赖](/guide/prerequisites)） |
 
 ::: warning Linux 暂未支持
 当前版本（v0.7.0）不提供 Linux 安装包，Linux 用户请关注后续版本。

@@ -135,7 +135,7 @@ API Key 是访问模型服务的唯一凭据，泄露后可能导致费用损失
 OpenCode 任务的模型下拉**直接复用你在本页配置的 OpenAI 兼容供应商**（v0.9.0 起）：应用会把供应商的接口地址与模型映射经由托管配置注入 OpenCode，**无需在 OpenCode 侧重复填写 API Key**。因此 deepseek、GLM 等第三方模型可直接用于 OpenCode 任务。
 
 - 只要某个供应商填好了 **OpenAI 接口地址**（可用性圆点显示「OpenCode CLI 可用」），它的模型就会出现在 OpenCode 任务的模型下拉中。
-- OpenCode 没有原生 OAuth 档位，模型下拉只列出**供应商模型**；未配置任何 OpenAI 兼容供应商时，下拉中的模型会置灰（原因提示「仅 OpenAI 接口」）。
+- OpenCode 没有原生 OAuth 档位，模型下拉只列出**供应商模型**；只填了 Anthropic 接口地址、没填 OpenAI 接口地址的供应商，其模型在 OpenCode 的下拉中会置灰（原因提示「供应商未配置接口地址」）。
 
 ---
 

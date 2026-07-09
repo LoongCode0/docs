@@ -34,11 +34,11 @@ features:
     details: MCP 服务器、插件市场、技能、子智能体，按需扩展 AI 的能力边界。
   - icon: 📱
     title: 跨出桌面
-    details: 接入微信 / 飞书机器人，离开电脑也能驱动任务继续跑。
+    details: 官方 LoongCode App（Android / iOS 原生应用）扫码配对，手机上实时查看与驱动任务；也可接入微信 / 飞书机器人，离开电脑任务照样跑。
 ---
 
 ::: info 版本说明
-本文档基于 **LoongCode v0.9.0** 编写。
+本文档基于 **LoongCode v0.9.1** 编写。
 :::
 
 ![LoongCode 主界面全景：左侧任务栏 + 中央对话区 + 右侧文件/终端面板，正在运行一个编码任务](/images/index_1.png)

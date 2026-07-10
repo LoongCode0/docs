@@ -5,6 +5,10 @@ hero:
   name: LoongCode
   text: 桌面 Agent IDE
   tagline: 把 Claude Code、Codex 与 OpenCode 装进图形界面——多任务并行、终端、文件、Git 一站式 AI 编程工作台
+  image:
+    dark: /logo-hero.png
+    light: /logo-light.png
+    alt: LoongCode 金龙 Logo
   actions:
     - theme: brand
       text: 快速上手

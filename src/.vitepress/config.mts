@@ -42,17 +42,21 @@ function placeholderImagePlugin(): Plugin {
   }
 }
 
-export default defineConfig({
+const config = defineConfig({
   lang: 'zh-CN',
   title: 'LoongCode 使用文档',
   description: 'LoongCode 桌面 Agent IDE 详细使用说明（基于 v0.8.0）',
   base: '/docs/',
   // srcDir 由 CLI 参数 'src' 传入（见 package.json scripts），outDir 相对于 srcDir 解析
   outDir: '../docs',
+  // 默认深色（玄墨），用户切换后以 localStorage 为准
+  appearance: 'dark',
   vite: {
     plugins: [placeholderImagePlugin()]
   },
   themeConfig: {
+    // 与桌面端侧栏一致：深色用黑底金龙，浅色用宣纸底古铜龙
+    logo: { light: '/logo-light.png', dark: '/logo.png', alt: 'LoongCode' },
     nav: [
       { text: '入门指南', link: '/guide/what-is-loongcode' },
       { text: '功能详解', link: '/features/tasks-and-workspaces' },
@@ -130,3 +134,12 @@ export default defineConfig({
     socialLinks: [{ icon: 'github', link: 'https://github.com/LoongCode0/loongcode-release' }]
   }
 })
+
+// favicon 的 href 不会被 VitePress 自动加 base 前缀，须手动拼接；
+// 从 config.base 派生（而非写死 '/docs/logo.png'），这样服务器 redeploy.sh 把 base sed 成 '/' 后仍然正确。
+config.head = [
+  ...(config.head ?? []),
+  ['link', { rel: 'icon', type: 'image/png', href: `${config.base}logo.png` }]
+]
+
+export default config

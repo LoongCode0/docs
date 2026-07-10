@@ -1,4 +1,64 @@
 /*
+ * 品牌主题「宣纸墨金」：与桌面端 LoongCode 同源的主题色。
+ * 色值取自 longlong-ade/src/styles/globals.css：
+ *   深色（玄墨）accent #e7c979→#c9a24a，鎏金字标渐变 --color-gold-grad；
+ *   浅色（宣纸）accent #c9a24a→#a8791f（古铜金），字标为古铜渐变。
+ * 按钮文字随桌面端 --color-primary-foreground：深色金底配深字 #241c0e，浅色古铜底配白字。
+ */
+:root {
+  --lc-gold-grad: linear-gradient(180deg, #c9a24a, #a8791f 45%, #8a6a14 80%, #b8860b);
+  --lc-gold-solid: #8a6a14;
+
+  --vp-c-brand-1: #a8791f;
+  --vp-c-brand-2: #8a6a14;
+  --vp-c-brand-3: #a8791f;
+  --vp-c-brand-soft: rgba(201, 162, 74, 0.14);
+
+  /* 首页 Hero：字标透出金渐变，Logo 背后柔金光晕 */
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: var(--lc-gold-grad);
+  --vp-home-hero-image-background-image: linear-gradient(-45deg, rgba(201, 162, 74, 0.5), rgba(231, 185, 78, 0.5));
+  --vp-home-hero-image-filter: blur(44px);
+}
+
+.dark {
+  --lc-gold-grad: linear-gradient(180deg, #fdf1cf, #f6d98a 30%, #e7b94e 55%, #c68f23 80%, #f3d176);
+  --lc-gold-solid: #e7b94e;
+
+  --vp-c-brand-1: #e7c979;
+  --vp-c-brand-2: #e7b94e;
+  --vp-c-brand-3: #c9a24a;
+  --vp-c-brand-soft: rgba(231, 201, 121, 0.16);
+
+  --vp-button-brand-text: #241c0e;
+  --vp-button-brand-hover-text: #241c0e;
+  --vp-button-brand-active-text: #241c0e;
+
+  --vp-home-hero-image-background-image: linear-gradient(-45deg, rgba(201, 162, 74, 0.38), rgba(253, 241, 207, 0.38));
+}
+
+/* Hero 图光晕在宽屏下加大（VitePress 官方推荐的响应式写法） */
+@media (min-width: 640px) {
+  :root {
+    --vp-home-hero-image-filter: blur(56px);
+  }
+}
+@media (min-width: 960px) {
+  :root {
+    --vp-home-hero-image-filter: blur(68px);
+  }
+}
+
+/* 导航栏站名复刻桌面端「鎏金字标」（.wordmark-gold）：纵向金属渐变透字 + 微金晕 */
+.VPNavBarTitle .title {
+  background: var(--lc-gold-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 1px 4px color-mix(in oklab, var(--lc-gold-solid) 25%, transparent));
+}
+
+/*
  * 任务状态指示灯（lc-dot）
  * 复刻 LoongCode 应用内 StatusDot 组件的真实外观，用于在文档表格中直接渲染指示灯。
  * 颜色对应源码：空闲/成功=success(绿)、运行中=warn(琥珀)、出错=danger(红)、提问中=info(蓝)、定时=schedule(紫)。

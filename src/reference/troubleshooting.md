@@ -50,7 +50,7 @@
 
 **解决步骤：**
 
-1. **手动下载安装包：** 访问 [GitHub Releases（LoongCode0/loongcode-release）](https://github.com/LoongCode0/loongcode-release/releases/latest) 下载对应平台的最新安装包：
+1. **手动下载安装包：** 访问 [LoongCode 官网](https://loongcode.cc/zh/#download) 下载对应平台的最新安装包：
    - Windows：`.exe` 或 `.msi` 安装包
    - macOS：`.dmg` 文件
 

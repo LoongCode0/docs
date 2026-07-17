@@ -13,6 +13,7 @@
 | `Ctrl+N` | 新建草稿分栏并选中 |
 | `Ctrl+Shift+T` | 复活最近关闭的分栏 |
 | `Ctrl+P` | 打开文件搜索面板 |
+| `Ctrl+Shift+F` | 打开[深度搜索](/features/deep-search)（检索任务标题与会话内容，v0.9.8 起） |
 | <code>Ctrl+`</code> | 开关底部终端面板 |
 
 ---

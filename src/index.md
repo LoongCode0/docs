@@ -42,7 +42,7 @@ features:
 ---
 
 ::: info 版本说明
-本文档基于 **LoongCode v0.9.7** 编写。
+本文档基于 **LoongCode v0.9.8** 编写。
 :::
 
 ![LoongCode 主界面全景：左侧任务栏 + 中央对话区 + 右侧文件/终端面板，正在运行一个编码任务](/images/index_1.png)

@@ -45,7 +45,7 @@ function placeholderImagePlugin(): Plugin {
 const config = defineConfig({
   lang: 'zh-CN',
   title: 'LoongCode 使用文档',
-  description: 'LoongCode 桌面 Agent IDE 详细使用说明（基于 v0.9.7）',
+  description: 'LoongCode 桌面 Agent IDE 详细使用说明（基于 v0.9.8）',
   base: '/docs/',
   // srcDir 由 CLI 参数 'src' 传入（见 package.json scripts），outDir 相对于 srcDir 解析
   outDir: '../docs',
@@ -81,10 +81,13 @@ const config = defineConfig({
           text: '功能详解',
           items: [
             { text: '任务与工作区', link: '/features/tasks-and-workspaces' },
+            { text: '深度搜索', link: '/features/deep-search' },
             { text: '多任务分屏', link: '/features/multi-pane' },
             { text: '对话面板', link: '/features/conversation' },
+            { text: '会话分享', link: '/features/session-share' },
             { text: '文件与编辑器', link: '/features/files-and-editor' },
             { text: '集成终端', link: '/features/terminal' },
+            { text: '终端 TUI 模式', link: '/features/tui-mode' },
             { text: 'Git 集成', link: '/features/git' },
             { text: '斜杠命令与文件面板', link: '/features/slash-commands' },
             { text: '动态工作流', link: '/features/workflows' },
@@ -112,6 +115,7 @@ const config = defineConfig({
             { text: '钩子', link: '/settings/hooks' },
             { text: '机器人渠道', link: '/settings/bots' },
             { text: '移动端配对', link: '/settings/mobile-pairing' },
+            { text: '分享', link: '/settings/share' },
             { text: '依赖管理', link: '/settings/dependencies' },
             { text: '关于', link: '/settings/about' }
           ]

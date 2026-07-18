@@ -45,7 +45,7 @@ function placeholderImagePlugin(): Plugin {
 const config = defineConfig({
   lang: 'zh-CN',
   title: 'LoongCode 使用文档',
-  description: 'LoongCode 桌面 Agent IDE 详细使用说明（基于 v0.9.8）',
+  description: 'LoongCode 桌面 Agent IDE 详细使用说明（基于 v0.9.10）',
   base: '/docs/',
   // srcDir 由 CLI 参数 'src' 传入（见 package.json scripts），outDir 相对于 srcDir 解析
   outDir: '../docs',

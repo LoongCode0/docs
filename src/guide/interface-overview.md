@@ -18,7 +18,7 @@
 - **任务列表**：每个工作区下方展示该工作区的任务条目。任务状态（空闲、运行中、成功、出错、提问中）通过任务行的**左侧书签条**与**行尾徽标**表达——运行中显示金色书签条、橙色旋转圆环和「已工作」计时；提问中显示蓝色书签条与蓝色「?」徽标；有未读消息时标题**加粗**并在行尾出现金色小圆点，看过后恢复灰色。详见[任务与工作区](/features/tasks-and-workspaces#任务状态)。
 - **归档入口**：任务大组头右侧可切换到归档视图，查看或管理已归档的历史任务。
 
-另外，左侧栏底部还有**新手引导**快捷入口、**账号用量**徽标（环形进度 + 百分比，悬浮查看已登录 Claude / Codex 账号的实时用量，可在[常规设置 → 账号用量](/settings/general#账号用量)中整体关闭，v0.9.9 起；详见[模型供应商 → 账号用量](/settings/providers#账号用量)）、**已分享**入口（分享图标带有效分享数角标，管理已创建的分享链接，详见[会话分享](/features/session-share)，v0.9.8 起）、**定时总览**入口（时钟图标，集中管理所有任务的[定时执行](/features/scheduled-send)）和**打开设置**按钮。
+另外，左侧栏底部还有**新手引导**快捷入口、**账号用量**徽标（环形进度 + 百分比，悬浮查看已登录 Claude / Codex / Kimi 账号的实时用量，可在[常规设置 → 账号用量](/settings/general#账号用量)中整体关闭，v0.9.9 起、Kimi 自 v0.10.0 起纳入；详见[模型供应商 → 账号用量](/settings/providers#账号用量)）、**已分享**入口（分享图标带有效分享数角标，管理已创建的分享链接，详见[会话分享](/features/session-share)，v0.9.8 起）、**定时总览**入口（时钟图标，集中管理所有任务的[定时执行](/features/scheduled-send)）和**打开设置**按钮。
 
 在这里你可以切换任务、管理工作区，以及快速定位历史对话。详细说明见[任务与工作区](/features/tasks-and-workspaces)。
 
@@ -53,7 +53,7 @@
 
 输入框位于界面底部，是向 AI 发送消息的入口：
 
-- **选择器条**（输入框上方）：从左到右依次为 CLI 选择（Claude CLI / Codex CLI / OpenCode CLI）、模型选择、思考深度（Claude：low / medium / high / xhigh / max / ultracode；Codex：minimal / low / medium / high / xhigh；OpenCode：default / minimal / low / medium / high / xhigh）、执行授权（Claude：default / plan / acceptEdits / auto / dontAsk / bypassPermissions；Codex：只读 / 自动 / 完全访问；OpenCode：auto / ask）、当前分支。
+- **选择器条**（输入框上方）：从左到右依次为 CLI 选择（Claude CLI / Codex CLI / OpenCode CLI / Kimi Code）、模型选择、思考深度（Claude：low / medium / high / xhigh / max / ultracode；Codex：minimal / low / medium / high / xhigh；OpenCode：default / minimal / low / medium / high / xhigh；Kimi 供应商模型：default / off / minimal / low / medium / high / max）、执行授权（Claude：default / plan / acceptEdits / auto / dontAsk / bypassPermissions；Codex：只读 / 自动 / 完全访问；OpenCode：auto / ask；Kimi：default / plan / auto / yolo）、当前分支。
 - **上下文用量指示器**：选择器条最右侧显示已用 / 总量的上下文 token 比例（token 是 AI 处理文本的计量单位）；可点击**压缩**对话历史以释放空间。
 - **触发器**：在输入框中输入 `@` 可从工作区文件列表添加文件上下文，输入 `/` 可打开命令面板使用内置命令、插件命令和技能（技能和命令统一从 `/` 调用）。
 - **占位提示**：「向 Claude 提问，输入 @ 添加文件，/ 使用命令，$ 使用技能」；其中 `$ 使用技能` 只是对技能类命令的说明文字，技能实际同样通过 `/` 命令面板调用（详见[斜杠命令](/features/slash-commands)）。等待 AI 回答时占位提示变为「请在上方卡片作答;或在此草拟下一条消息…」。
@@ -91,13 +91,13 @@
 设置页面提供以下分类（左侧导航）：
 
 - **常规**：主题、数据目录、CLI 路径、提示音、代码快照、自动压缩、使用引导等
-- **依赖管理**：检测并安装 Claude CLI / Codex CLI / OpenCode CLI 等依赖
+- **依赖管理**：检测并安装 Claude CLI / Codex CLI / OpenCode CLI / Kimi Code CLI 等依赖
 - **模型供应商**：配置各 AI 服务商的 API 密钥（API 密钥是服务商发给你的专属访问凭证）、接口地址、可用模型列表、OAuth 登录与网络代理
-- **记忆**：管理 Claude / Codex / OpenCode 的持久化指令文件（CLAUDE.md / AGENTS.md）与 Claude 的 auto-memory
+- **记忆**：管理 Claude / Codex / OpenCode / Kimi 的持久化指令文件（CLAUDE.md / AGENTS.md）与 Claude 的 auto-memory
 - **插件**：发现、安装和管理插件
 - **技能**：创建或编辑可复用的提示词技能
 - **MCP 服务器**：增删改 MCP（Model Context Protocol）服务器配置，扩展 AI 可用的外部工具
-- **钩子**：管理 Claude / Codex 生命周期事件的自动化钩子（Hooks）
+- **钩子**：管理 Claude / Codex / Kimi 生命周期事件的自动化钩子（Hooks）
 - **子智能体**：管理子智能体配置
 - **移动端配对**：绑定 LoongCode App，远程查看与驱动电脑上的任务
 - **分享**：配置[会话分享](/features/session-share)所用的分享服务器与访问密钥（留空即用官方服务）

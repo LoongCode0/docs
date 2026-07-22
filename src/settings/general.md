@@ -71,7 +71,7 @@
 - **Claude CLI 命令** — 调用 Claude CLI 使用的命令或路径
 - **Codex CLI 命令** — 调用 Codex CLI 使用的命令或路径
 
-> **OpenCode CLI 无需在此手动配置**（v0.9.0 起）：应用会自动在系统 `PATH` 及 `~/.opencode/bin`、scoop shims 等常见位置发现 `opencode` 命令，因此本节不提供 OpenCode 的路径输入框。
+> **OpenCode CLI 与 Kimi Code CLI 无需在此手动配置**：应用会自动在系统 `PATH` 及各自的默认安装位置（如 `~/.opencode/bin`、`~/.kimi-code/bin`、scoop shims 等）发现 `opencode` 与 `kimi` 命令，因此本节不提供这两个 CLI 的路径输入框。
 
 **操作：** 在输入框中直接填写命令名（如 `claude`）或可执行文件的绝对路径（如 `/usr/local/bin/claude`）；也可点击旁边的"选择文件"按钮通过文件浏览器定位。
 
@@ -123,7 +123,7 @@
 
 ## 账号用量
 
-**作用：** 控制侧边栏的 Claude / Codex 账号用量徽标是否显示（v0.9.9 起）。开启时应用每 5 分钟在后台拉起一次 CLI 查询账号实时用量；关闭后徽标整体隐藏、后台不再发起任何查询，[模型供应商](/settings/providers#账号用量)页登录卡片中的用量区块也会显示「账号用量已在「通用」设置中关闭」的提示。
+**作用：** 控制侧边栏的 Claude / Codex / Kimi 账号用量徽标是否显示（v0.9.9 起，Kimi 自 v0.10.0 起纳入）。开启时应用每 5 分钟在后台拉起一次 CLI 查询账号实时用量；关闭后徽标整体隐藏、后台不再发起任何查询，[模型供应商](/settings/providers#账号用量)页登录卡片中的用量区块也会显示「账号用量已在「通用」设置中关闭」的提示。
 
 **默认值：** 开启
 
@@ -178,4 +178,4 @@
 
 - [CLI 与任务配置](/settings/cli) — 设置任务级 CLI、模型、思考深度与授权模式
 - [模型供应商](/settings/providers) — 接入第三方 API 或自定义供应商
-- [依赖管理](/settings/dependencies) — 检测与安装 Claude CLI / Codex CLI / OpenCode CLI 等外部工具
+- [依赖管理](/settings/dependencies) — 检测与安装 Claude CLI / Codex CLI / OpenCode CLI / Kimi Code CLI 等外部工具

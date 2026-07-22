@@ -2,9 +2,9 @@
 
 **入口：** 侧边栏 → **设置** → **记忆**
 
-记忆（Memory）页面集中管理 Claude / Codex / OpenCode 用于长期记住项目约定与个人偏好的持久化指令文件（`CLAUDE.md` / `AGENTS.md`），以及 Claude 的 **auto-memory**（模型在对话过程中自动积累的分主题笔记）。
+记忆（Memory）页面集中管理 Claude / Codex / OpenCode / Kimi 用于长期记住项目约定与个人偏好的持久化指令文件（`CLAUDE.md` / `AGENTS.md`），以及 Claude 的 **auto-memory**（模型在对话过程中自动积累的分主题笔记）。
 
-本页通过顶部 **Claude | Codex | OpenCode** 切换栏分别维护各 CLI 的记忆文件。
+本页通过顶部 **Claude | Codex | OpenCode | Kimi** 切换栏分别维护各 CLI 的记忆文件（Kimi 家族自 v0.10.0 起纳入）。
 
 ![截图：记忆设置页面，顶部 Claude/Codex/OpenCode 切换栏，下方分「全局记忆」「项目记忆」两组，项目记忆下方展示 AUTO-MEMORY 子列表](/images/memory_1.png)
 
@@ -16,8 +16,8 @@
 
 | 作用域 | 说明 | 对应文件 |
 |--------|------|---------|
-| **全局记忆** | 跨项目生效，存储在各 CLI 的用户级配置目录 | Claude：`~/.claude/CLAUDE.md`；Codex：`~/.codex/AGENTS.md`；OpenCode：`~/.config/opencode/AGENTS.md`（遵循 `XDG_CONFIG_HOME` 环境变量，未设置时使用该默认路径） |
-| **项目记忆** | 仅当前工作区生效；未打开工作区时该组显示提示「选择工作区任务后可查看项目记忆」 | Claude：`<工作区>/CLAUDE.md`；Codex / OpenCode：`<工作区>/AGENTS.md` |
+| **全局记忆** | 跨项目生效，存储在各 CLI 的用户级配置目录 | Claude：`~/.claude/CLAUDE.md`；Codex：`~/.codex/AGENTS.md`；OpenCode：`~/.config/opencode/AGENTS.md`（遵循 `XDG_CONFIG_HOME` 环境变量，未设置时使用该默认路径）；Kimi：`~/.kimi-code/AGENTS.md` |
+| **项目记忆** | 仅当前工作区生效；未打开工作区时该组显示提示「选择工作区任务后可查看项目记忆」 | Claude：`<工作区>/CLAUDE.md`；Codex / OpenCode / Kimi：`<工作区>/AGENTS.md` |
 
 若对应文件已存在，显示一行记录（文件名、路径、文件大小），点击可打开详情弹窗；若尚未创建，显示「尚未创建」提示与**新建**按钮，点击即在目标路径创建一份空文件。
 

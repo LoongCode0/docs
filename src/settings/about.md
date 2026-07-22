@@ -56,4 +56,4 @@
 ## 下一步
 
 - [常规设置](/settings/general) — 主题、语言、数据目录等全局配置
-- [依赖管理](/settings/dependencies) — 检测与安装 Claude CLI / Codex CLI / OpenCode CLI
+- [依赖管理](/settings/dependencies) — 检测与安装 Claude CLI / Codex CLI / OpenCode CLI / Kimi Code CLI

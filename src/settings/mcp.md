@@ -2,13 +2,15 @@
 
 **入口：** 侧边栏 → **设置** → **MCP 服务器**
 
-MCP（Model Context Protocol，模型上下文协议）是让 AI 连接外部工具和数据源的开放协议。通过添加 MCP 服务器，Claude、Codex 或 OpenCode 可以在对话中直接调用数据库查询、文件系统、Web 搜索等能力。例如，接入文件系统类或数据库类的 MCP 服务器后，AI 就能直接读取相应数据来回答问题，而无需你手动把内容复制粘贴进对话。
+MCP（Model Context Protocol，模型上下文协议）是让 AI 连接外部工具和数据源的开放协议。通过添加 MCP 服务器，Claude、Codex、OpenCode 或 Kimi 可以在对话中直接调用数据库查询、文件系统、Web 搜索等能力。例如，接入文件系统类或数据库类的 MCP 服务器后，AI 就能直接读取相应数据来回答问题，而无需你手动把内容复制粘贴进对话。
 
-本页管理各 CLI 各自的 MCP 服务器配置。页面顶部的 **Claude | Codex | OpenCode** 切换栏用于分别维护各 CLI 的服务器列表（OpenCode 家族自 v0.9.0 起纳入）。
+本页管理各 CLI 各自的 MCP 服务器配置。页面顶部的 **Claude | Codex | OpenCode | Kimi** 切换栏用于分别维护各 CLI 的服务器列表（OpenCode 家族自 v0.9.0 起、Kimi 家族自 v0.10.0 起纳入）。
 
 ![MCP 服务器设置页面，顶部 Claude/Codex/OpenCode 切换栏，下方服务器列表每行显示状态灯、名称、作用域标签和传输协议摘要](/images/mcp_1.png)
 
 > **OpenCode 的 MCP 为用户级**：OpenCode 家族下新增的 MCP 服务器以用户作用域读写应用托管的 `opencode.json` 配置（应用会在 Claude 风格与 OpenCode 原生的 local / remote 表示间双向翻译），支持增删改与启停。
+>
+> **Kimi 支持用户级与工作区级双作用域**（v0.10.0 起）：用户级写入 `~/.kimi-code/mcp.json`，工作区级写入 `<工作区>/.mcp.json`；改动（增删改、启停）后 Kimi 会话会自动以新配置重启生效，无需手动操作。
 
 ---
 
@@ -27,7 +29,7 @@ MCP（Model Context Protocol，模型上下文协议）是让 AI 连接外部工
 - 删除按钮（红色垃圾桶图标）— 删除服务器，不可撤销
 - 启用开关 — 拨动即可即时启用或停用，无需重新填写配置
 
-> Claude 模式下若未关联工作区任务，启用开关不可操作，可先在任务列表中点击一个工作区任务再切换；Codex 与 OpenCode 模式无此限制。
+> Claude 模式下若未关联工作区任务，启用开关不可操作，可先在任务列表中点击一个工作区任务再切换；Codex、OpenCode 与 Kimi 模式无此限制。
 
 ---
 

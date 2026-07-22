@@ -10,7 +10,8 @@
 
 **回合代码快照**（Turn Code Snapshots）是一项自动保护功能：
 
-- 每次你发送消息（每个对话轮次开始前），LoongCode 会自动给工作区代码拍一份快照，以 git 机制存储在本地。Claude、Codex 与 OpenCode 三个 CLI 家族的任务均支持（Codex 与 OpenCode 自 v0.9.0 起）。
+- 每次你发送消息（每个对话轮次开始前），LoongCode 会自动给工作区代码拍一份快照，以 git 机制存储在本地。Claude、Codex、OpenCode 与 Kimi 四个 CLI 家族的任务均会拍快照（Codex 与 OpenCode 自 v0.9.0 起，Kimi 自 v0.10.0 起）。
+- 注意：快照的回滚入口依附于「编辑历史消息重跑」，而 Kimi 任务暂不支持编辑历史消息（见 [CLI 与任务配置 → Kimi Code 的能力边界](/settings/cli#kimi-code-的能力边界)），因此 Kimi 任务的快照当前无法通过该入口回滚。
 - 快照与对话消息的每一轮次绑定，每条历史用户消息对应一份快照（若快照存在）。
 - 有了快照，你可以在编辑历史消息重跑时选择「同时回滚代码」，将工作区代码回到该消息发送前的状态。
 
